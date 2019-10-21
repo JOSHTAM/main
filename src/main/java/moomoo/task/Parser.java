@@ -10,6 +10,7 @@ import moomoo.command.GraphCommand;
 import moomoo.command.ListCategoryCommand;
 import moomoo.command.ScheduleCommand;
 import moomoo.command.DeleteCategoryCommand;
+import moomoo.command.DeleteExpenditureCommand;
 import moomoo.command.TotalCommand;
 
 import java.util.NoSuchElementException;
@@ -56,30 +57,20 @@ public class Parser {
         String input = parseInput(scanner, ui, "delete");
         switch (input) {
         case ("category"): return new DeleteCategoryCommand();
+        case ("expenditure"): return new DeleteExpenditureCommand();
         default: throw new MooMooException("Sorry I did not recognize that command.");
         }
     }
 
     private static Command parseAdd(Scanner scanner, Ui ui) throws MooMooException {
-        //String input = parseInput(scanner, ui, "add");
-        //switch (input) {
-        switch (scanner.next()) {
+        String input = parseInput(scanner, ui, "add");
+        switch (input) {
         case ("category"): return new AddCategoryCommand();
-        case ("expenditure"): return parseAddExpenditure(ui);
+        case ("expenditure"): return new AddExpenditureCommand();
         default:
             throw new MooMooException("Sorry I did not recognize that command.");
 
         }
-    }
-
-    private static Command parseAddExpenditure(Ui ui) {
-        ui.showAddExpenditureMessage();
-        String input = ui.readCommand();
-        String[] parts = input.split("-");
-        String expenditureName = parts[0];
-        String amount = parts[1];
-
-        return new AddExpenditureCommand(false, amount, expenditureName);
     }
 
     private static String parseInput(Scanner scanner, Ui ui, String text) {

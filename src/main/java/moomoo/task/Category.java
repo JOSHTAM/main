@@ -21,7 +21,8 @@ public class Category {
         this.monthTotal = 0.00;
     }
 
-    public int getCategoryArraySize() {
+
+    public int size() {
         return category.size();
     }
 
@@ -35,6 +36,10 @@ public class Category {
 
     public void add(Expenditure newExpenditure) {
         category.add(newExpenditure);
+    }
+
+    public void deleteExpenditure(int expenditureNumber) {
+        category.remove(expenditureNumber);
     }
 
     /**
@@ -53,18 +58,6 @@ public class Category {
         return monthTotal;
     }
 
-    public void addExpenditure() {
-
-    }
-
-    public void editExpenditure() {
-
-    }
-
-    public void deleteExpenditure() {
-
-    }
-    
     /**
      * Set the month total (FOR TESTING PURPOSES).
      * @param value The value to be set

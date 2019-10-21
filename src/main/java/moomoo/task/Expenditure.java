@@ -8,15 +8,6 @@ public class Expenditure {
     private String name;
     public LocalDateTime dateTime;
 
-    public Expenditure() {
-        this.cost = 0.0;
-    }
-
-    public Expenditure(String name, double cost) {
-        this.name = name;
-        this.cost += 0.0;
-    }
-
     public Expenditure(double cost) {
         this.cost += cost;
     }
@@ -29,5 +20,4 @@ public class Expenditure {
     public double amount() {
         return this.cost;
     }
-
 }

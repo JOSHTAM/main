@@ -22,7 +22,7 @@ public class DeleteCategoryCommand extends Command {
 
         categoryList.list(ui);
         ui.showEnterCategoryMessage();
-        int categoryNumber = ui.readNumber() - 1;
+        int categoryNumber = ui.readNumber();
         ui.showRemovedCategoryMessage(categoryList.get(categoryNumber));
         categoryList.deleteCategory(categoryNumber);
     }
