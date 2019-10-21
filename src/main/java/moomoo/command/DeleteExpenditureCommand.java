@@ -27,12 +27,12 @@ public class DeleteExpenditureCommand extends Command {
         String[] parts = input.split("-");
         int categoryNumber = Integer.parseInt(parts[0]);
         double amount = Double.parseDouble(parts[1]);
+
         for (int i = 0; i < categoryList.get(categoryNumber).size(); i++) {
             if (categoryList.get(categoryNumber).get(i).amount() == amount) {
-               categoryList.get(categoryNumber).deleteExpenditure(i);
-               ui.showRemovedExpenditureMessage(categoryList.get(categoryNumber));
-            }
-            else {
+                categoryList.get(categoryNumber).deleteExpenditure(i);
+                ui.showRemovedExpenditureMessage(categoryList.get(categoryNumber));
+            } else {
                 ui.showErrorMessage("Please add the expenditure first.");
             }
         }

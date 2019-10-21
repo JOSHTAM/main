@@ -162,6 +162,7 @@ public class Ui {
     public void showRemovedExpenditureMessage(Category category) {
         print("Ok, I've deleted the expenditure under " + category.toString() + ".");
     }
+
     /**
      * Prints out when a new expenditure is created.
      * @param expenditureName name of the new expenditure
@@ -170,14 +171,12 @@ public class Ui {
         print("Ok, I've added a new expenditure under " + expenditureName);
     }
 
-
     /**
      * Promts the user to enter the number corresponding to a month.
      */
     public void showEnterMonthMessage() {
         print("Please enter a month in the format MM.");
     }
-
 
     /**
      * Prompts the user to enter a expenditure name.
