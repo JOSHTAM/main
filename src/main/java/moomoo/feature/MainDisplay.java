@@ -271,11 +271,11 @@ public class MainDisplay {
                             String expenditureName = categoryList.get(j).get(i).getName();
                             String amountString = df.format(categoryList.get(j).get(i).getCost());
                             // prints out each individual expenditureName if it exists
-                            if (expenditureName.length() > 14) {
-                                expenditureName = expenditureName.substring(0, 11) + "...";
+                            if (expenditureName.length() > 11) {
+                                expenditureName = expenditureName.substring(0, 8) + "...";
                             } else {
                                 blankSpaceExp = "";
-                                for (int h = 0; h < (14 - categoryList.get(j).get(i).getName().length()); h++) {
+                                for (int h = 0; h < (11 - categoryList.get(j).get(i).getName().length()); h++) {
                                     blankSpaceExp += " ";
                                 }
                             }
@@ -288,7 +288,7 @@ public class MainDisplay {
                                     blankSpaceCost += " ";
                                 }
                             }
-                            output += expenditureName + blankSpaceExp + "|"
+                            output += (i+1) + ". " + expenditureName + blankSpaceExp + "|"
                                     //+ ANSI_GREEN + "$" + ANSI_RESET
                                     + "$"
                                     + amountString + blankSpaceCost + "|";
@@ -457,12 +457,12 @@ public class MainDisplay {
                                     newCategoryList.get(categoryName).remove(0);
                                 }
                             }
-                            if (expenditureName.length() > 14) {
-                                expenditureName = expenditureName.substring(0, 11) + "...";
+                            if (expenditureName.length() > 11) {
+                                expenditureName = expenditureName.substring(0, 8) + "...";
                             } else {
                                 blankSpaceExp = "";
                                 // prints out each individual expenditure Name if it exists
-                                for (int h = 0; h < (14 - expenditureName.length()); h++) {
+                                for (int h = 0; h < (11 - expenditureName.length()); h++) {
                                     blankSpaceExp += " ";
                                 }
                             }
@@ -476,7 +476,7 @@ public class MainDisplay {
                                 }
                             }
 
-                            output += expenditureName + blankSpaceExp + "|"
+                            output += (i+1) + ". " + expenditureName + blankSpaceExp + "|"
                                     + "$"
                                     + amountString + blankSpaceCost + "|";
                         } else {

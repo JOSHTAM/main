@@ -14,8 +14,6 @@ internet
 100
 Electricity
 50
-netflix
-100
 Water
 45.45
 Phone

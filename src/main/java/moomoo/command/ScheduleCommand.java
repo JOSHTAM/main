@@ -45,7 +45,7 @@ public class ScheduleCommand extends Command {
         if (input.length() == 13 && input.contains("list")) {
             Iterator calIt = calendar.calendar.entrySet().iterator();
             String output = "Scheduled Payments\n";
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/mm/yy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yy");
             Map<Date, ArrayList<String>> sorted = new TreeMap<>();
             while (calIt.hasNext()) {
                 Map.Entry entry = (Map.Entry)calIt.next();
